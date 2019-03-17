@@ -1,0 +1,51 @@
+/*
+ * Esfera.h
+ *
+ *  Created on: Aug 9, 2015
+ *      Author: francisco
+ */
+
+#ifndef ESFERA_H_
+#define ESFERA_H_
+
+#include <stdexcept>
+#include <cmath>
+
+#include "vector3d.h"
+#include "recta.h"
+
+using namespace std;
+
+namespace geom {
+
+class Esfera {
+	Vector3D origen;
+	double radio;
+public:
+	inline Esfera(double x=0.0,double y=0.0,double z=0.0,double r=10.0):origen(x,y,z),radio(r){
+	}
+	virtual ~Esfera();
+	inline Vector3D& getOrigen(){return origen;}
+	inline double&  getRadio() {return radio;}
+	inline Vector3D normal(Vector3D& p){
+		Vector3D vn;
+		vn=p-origen;
+		vn.normalize();
+		return vn;
+	}
+	double interseccion(Recta& r);
+	Vector3D puntoInterseccion(Recta& r);
+//	inline double distancia(Esfera& e){
+//		Vector3D v=origen-e.getOrigen();
+//		double l=v.length();
+//		double d=l-radio-e.getRadio();
+//		return d;
+//	}
+//	inline double distancia(Plano& p){
+//		return p.distancia(*this);
+//	}
+};
+
+} /* namespace geom */
+
+#endif /* ESFERA_H_ */

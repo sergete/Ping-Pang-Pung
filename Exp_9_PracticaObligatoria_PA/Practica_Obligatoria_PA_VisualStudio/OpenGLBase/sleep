@@ -1,0 +1,3 @@
+src/fuerzaPares.d: ../src/fuerzaPares.cpp ../src/fuerzaPares.h
+
+../src/fuerzaPares.h:

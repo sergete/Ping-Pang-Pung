@@ -1,0 +1,3 @@
+En la carpeta para Practica_Obligatoria_PA_VisualStudio deberá abrir el archivo con nombre OpenGLBase del tipo Microsoft Visual Studio. Y ejecutarlo en modo Release.
+
+Encontrarás las carpetas freeglut y glew para poder vincular en visual studio las librearias al proyecto.
